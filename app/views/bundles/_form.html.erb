@@ -31,6 +31,11 @@
     <%= f.label :firmware_revision %><br>
     <%= f.text_field :firmware_revision %>
   </div>
+  <div class="field">
+    <%= f.label :companies %>
+    <%= f.collection_select( :company_id, Company.all, :id, :title, 
+    {selected: @bundle.course_id, include_blank: false}) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

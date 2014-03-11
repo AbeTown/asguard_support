@@ -1,6 +1,7 @@
 AsguardSupport::Application.routes.draw do
   resources :bundles
-
+  resources :companies
+  
   root to: 'welcome#hello'
 
   # The priority is based upon order of creation: first created -> highest priority.
