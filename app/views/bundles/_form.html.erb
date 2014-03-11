@@ -37,8 +37,8 @@
     {selected: @bundle.company_id, include_blank: false}) %>
   </div>
     <div class="field">
-    <%= f.label :design %> <%=link_to 'Create New?', design_new_path%><br>
-    <%= f.collection_select( :design_id, Design.all, :id, :design_role, :design_type, :design_subtype, 
+    <%= f.label :design %> <%=link_to 'Create New?', designs_new_path%><br>
+    <%= f.collection_select( :design_id, Design.all, :id, :design_role,
     {selected: @bundle.design_id, include_blank: false}) %>
   </div>
   <div class="actions">
