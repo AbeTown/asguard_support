@@ -1,0 +1,37 @@
+<h1>Listing bundles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Uid</th>
+      <th>Description</th>
+      <th>Bundled at</th>
+      <th>Errors</th>
+      <th>Environment</th>
+      <th>Firmware revision</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bundles.each do |bundle| %>
+      <tr>
+        <td><%= bundle.uid %></td>
+        <td><%= bundle.description %></td>
+        <td><%= bundle.bundled_at %></td>
+        <td><%= bundle.errors %></td>
+        <td><%= bundle.environment %></td>
+        <td><%= bundle.firmware_revision %></td>
+        <td><%= link_to 'Show', bundle %></td>
+        <td><%= link_to 'Edit', edit_bundle_path(bundle) %></td>
+        <td><%= link_to 'Destroy', bundle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bundle', new_bundle_path %>

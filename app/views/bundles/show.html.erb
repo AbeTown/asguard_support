@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Uid:</strong>
+  <%= @bundle.uid %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @bundle.description %>
+</p>
+
+<p>
+  <strong>Bundled at:</strong>
+  <%= @bundle.bundled_at %>
+</p>
+
+<p>
+  <strong>Errors:</strong>
+  <%= @bundle.errors %>
+</p>
+
+<p>
+  <strong>Environment:</strong>
+  <%= @bundle.environment %>
+</p>
+
+<p>
+  <strong>Firmware revision:</strong>
+  <%= @bundle.firmware_revision %>
+</p>
+
+<%= link_to 'Edit', edit_bundle_path(@bundle) %> |
+<%= link_to 'Back', bundles_path %>

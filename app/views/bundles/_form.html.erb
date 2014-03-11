@@ -1,0 +1,41 @@
+<%= form_for(@bundle) do |f| %>
+  <% if @bundle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bundle.errors.count, "error") %> prohibited this bundle from being saved:</h2>
+
+      <ul>
+      <% @bundle.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :uid %><br>
+    <%= f.number_field :uid %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :bundled_at %><br>
+    <%= f.datetime_select :bundled_at %>
+  </div>
+  <div class="field">
+    <%= f.label :errors %><br>
+    <%= f.text_area :errors %>
+  </div>
+  <div class="field">
+    <%= f.label :environment %><br>
+    <%= f.text_field :environment %>
+  </div>
+  <div class="field">
+    <%= f.label :firmware_revision %><br>
+    <%= f.text_field :firmware_revision %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
