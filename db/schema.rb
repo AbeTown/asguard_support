@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140311064201) do
+ActiveRecord::Schema.define(version: 20140311070312) do
 
   create_table "bundles", force: true do |t|
     t.integer  "uid"
@@ -20,6 +20,14 @@ ActiveRecord::Schema.define(version: 20140311064201) do
     t.text     "errors"
     t.string   "environment"
     t.string   "firmware_revision"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "companies", force: true do |t|
+    t.integer  "bundle_id"
+    t.string   "company_name"
+    t.text     "company_description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
