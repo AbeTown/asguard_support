@@ -1,6 +1,7 @@
 class Bundle < ActiveRecord::Base
 
-	belongs_to :company, :design
+	belongs_to :company 
+	belongs_to :design
 
 	# Scope for uid. Simple enough that this SHOULD BE DELETED LATER
 	def self.uid
@@ -8,10 +9,11 @@ class Bundle < ActiveRecord::Base
 	end
 
 	def self.firmware_release
-		if self.environment == ('test' or 'Test'){
+		if self.environment == ('test' or 'Test')
 			return "Test Build"
-		}
-		else return self.firmware_revision[-3, self.firmware_revision.length]
+		else 
+			return self.firmware_revision[-3, self.firmware_revision.length]
+		end
 	end
 
 	# Method to return the firmware_revision and environment
