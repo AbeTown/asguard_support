@@ -1,4 +1,9 @@
 AsguardSupport::Application.routes.draw do
+  get "design/index"
+  get "design/create"
+  get "design/new"
+  get "design/show"
+  get "design/destroy"
   resources :bundles
   resources :companies
   
