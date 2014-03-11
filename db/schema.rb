@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140311070312) do
+ActiveRecord::Schema.define(version: 20140311070726) do
 
   create_table "bundles", force: true do |t|
     t.integer  "uid"
@@ -28,6 +28,16 @@ ActiveRecord::Schema.define(version: 20140311070312) do
     t.integer  "bundle_id"
     t.string   "company_name"
     t.text     "company_description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "designs", force: true do |t|
+    t.integer  "bundle_id"
+    t.string   "design_role"
+    t.string   "design_type"
+    t.string   "design_subtype"
+    t.string   "connection_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
