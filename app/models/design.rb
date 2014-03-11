@@ -2,6 +2,7 @@ class Design < ActiveRecord::Base
 
 	has_many :bundles
 
+	validates_presence_of :design_role, :design_type, :design_subtype
 	# The connection type as determined by the string given for design_subtype
 	def self.connection_type
 		if self.design_subtype == ('v' or 'V')
