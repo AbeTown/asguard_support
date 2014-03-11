@@ -69,6 +69,6 @@ class BundlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bundle_params
-      params.require(:bundle).permit(:uid, :description, :bundled_at, :environment, :firmware_revision)
+      params.require(:bundle).permit(:uid, :description, :bundle_errors, :environment, :firmware_revision)
     end
 end
