@@ -1,5 +1,7 @@
 class Bundle < ActiveRecord::Base
 
+	belongs_to :company, :design
+
 	# Method to return the firmware_revision and environment
 	def firmware_and_environment
 		'#{firmware_revision}' + '--' + '#{environment}'
