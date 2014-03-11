@@ -32,9 +32,14 @@
     <%= f.text_field :firmware_revision %>
   </div>
   <div class="field">
-    <%= f.label :companies %> <%=link_to 'Create New?', new_company_path%><br>
+    <%= f.label :company %> <%=link_to 'Create New?', new_company_path%><br>
     <%= f.collection_select( :company_id, Company.all, :id, :company_name, 
     {selected: @bundle.company_id, include_blank: false}) %>
+  </div>
+    <div class="field">
+    <%= f.label :design %> <%=link_to 'Create New?', design_new_path%><br>
+    <%= f.collection_select( :design_id, Design.all, :id, :design_role, :design_type, :design_subtype, 
+    {selected: @bundle.design_id, include_blank: false}) %>
   </div>
   <div class="actions">
     <%= f.submit %>

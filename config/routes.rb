@@ -1,9 +1,11 @@
 AsguardSupport::Application.routes.draw do
-  get "design/index"
-  get "design/create"
-  get "design/new"
-  get "design/show"
-  get "design/destroy"
+
+  get 'designs', to: 'designs#index'
+  post 'designs', to: 'designs#create'
+  get 'designs/new', to: 'designs#new'
+  get 'designs/:id', to: 'designs#show'
+  delete 'designs/:id', to: 'designs#destroy'
+
   resources :bundles
   resources :companies
   
